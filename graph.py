@@ -1,16 +1,43 @@
-import matplotlib.pyplot as plt
+#Three lines to make our compiler able to draw:
+import sys
+import matplotlib
+matplotlib.use('Agg')
+
 import numpy as np
+import matplotlib.pyplot as plt
 
-x = np.linspace(0, 2*np.pi, 100)
-y1 = np.sin(x)
-y2 = np.cos(x)
 
-fig, ax = plt.subplots()
-ax.plot(x, y1)
-ax.plot(x, y2)
+x = np.array([2.000, 0.589, 0.053, 0.063])
+y = np.array([0.476, 0.391, 0.042, 0.007])
 
-ax.grid(linestyle='--', linewidth=0.5)
+plt.title("Graph Of Screen Analysis Experiment Using Set of Sieve A")
+plt.xlabel("mass fraction")
+plt.ylabel("particle size")
 
-plt.tight_layout()
+
+
+plt.subplot(2, 1, 1)
+plt.plot(x, y)
+
+plt.grid()
+
+
+#Two  lines to make our compiler able to draw:
+
+#######
+
+#plot 2:
+
+x = np.array([2.000, 0.589, 0.053, 0.063])
+y = np.array([0.476, 0.867, 0.909, 0.916])
+
+plt.xlabel("cumulative fraction")
+plt.ylabel("particle size")
+plt.subplot(2, 1, 2)
+plt.plot(x,y)
+plt.grid()
 plt.show()
-plt.savefig('screen.pdf')
+
+#Two  lines to make our compiler able to draw:
+
+plt.savefig('screen_analysis.pdf')
