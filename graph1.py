@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-fig, (ax1, ax2,ax3, ax4) = plt.subplots(4, 1, figsize=(10, 10))
+fig, (ax1, ax2,ax3, ax4) = plt.subplots(4, 1, figsize=(10,20))
                                             # gridspec_kw={'hspace': 0.4, 'wspace': 0.4})
 
 x = np.array([2.000, 0.589, 0.053, 0.063])
