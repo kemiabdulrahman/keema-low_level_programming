@@ -1,61 +1,32 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.interpolate import interp1d
 
-fig, (ax1, ax2,ax3, ax4) = plt.subplots(4, 1, figsize=(10,22))
+x1 = [0, 300, 600, 900, 1200, 1500, 1800, 2100, 72000]
+y1 = [24.00, 20.80, 17.90, 16.20, 14.00, 11.80, 9.60, 6.60, 1.70]
 
-x = np.array([10,28,53,63,45])
-y = np.array([0.476, 0.391, 0.042, 0.007,0.073])
+x2 = np.random.randint(0, 72000, 9)
+y2 = np.random.randint(0, 30, 9)
 
-cubic_interpolation_model = interp1d(x, y, kind = "cubic")
+x3 = np.random.randint(0, 72000, 9)
+y3 = np.random.randint(0, 30, 9)
 
-X_=np.linspace(x.min(), x.max(), 500)
-Y_=cubic_interpolation_model(X_)
+x4 = np.random.randint(0, 72000, 9)
+y4 = np.random.randint(0, 30, 9)
 
-ax1.plot(X_, Y_)
-ax1.set_title("Graph Of Screen Analysis Experiment Using Set of Sieve A")
-ax1.set_xlabel("Particle Size")
-ax1.set_ylabel("Mass Fraction")
-ax1.grid()
+fig, axs = plt.subplots(4, 1, figsize=(8, 12))
+axs[0].plot(x1, y1, label='Graph 1')
+axs[0].set_title("Graph 1")
 
+axs[1].plot(x2, y2, label='Graph 2')
+axs[1].set_title("Graph 2")
 
-x = np.array([10,28,53,63,67])
-y = np.array([0.476,0.867,0.909,0.916,0.989])
+axs[2].plot(x3, y3, label='Graph 3')
+axs[2].set_title("Graph 3")
 
-cubic_interpolation_model = interp1d(x, y, kind = "cubic")
+axs[3].plot(x4, y4, label='Graph 4')
+axs[3].set_title("Graph 4")
 
-X_=np.linspace(x.min(), x.max(), 500)
-Y_=cubic_interpolation_model(X_)
-
-ax2.plot(X_,Y_)
-ax2.set_xlabel("Particle Size")
-ax2.set_ylabel("Cumulative Fraction")
-ax2.grid()
-
-x = np.array([10,14,18,30,50,70,56])
-y = np.array([0.5650,0.1200,0.1210,0.0790,0.0390,0.0427,0.0143])
-
-cubic_interpolation_model = interp1d(x, y, kind = "cubic")
-
-X_=np.linspace(x.min(), x.max(), 500)
-Y_=cubic_interpolation_model(X_)
-
-ax3.plot(X_, Y_)
-ax3.set_title("Graph Of Screen Analysis Experiment Using Set of Sieve B")
-ax3.set_xlabel("Particle Size")
-ax3.set_ylabel("Mass Fraction")
-ax3.grid()
-
-x = np.array([10,14,18,30,50,70,56])
-y = np.array([0.565, 0.685, 0.806,0.885 ,0.924,0.967,0.981])
-
-cubic_interpolation_model = interp1d(x, y, kind = "cubic")
-
-X_=np.linspace(x.min(), x.max(), 500)
-Y_=cubic_interpolation_model(X_)
-
-ax4.plot(X_,Y_)
-ax4.set_xlabel("hello")
-ax4.set_ylabel("hi")
-ax4.grid()
+fig.suptitle("Plot of height of interface against time")
+plt.tight_layout()
+plt.show()
 
